@@ -24,6 +24,7 @@ Including another URLconf
 from django.conf.urls import *
 from django.contrib import admin
 from blog import views
+from django.urls import include
 
 admin.autodiscover()
 
@@ -33,5 +34,6 @@ urlpatterns = [
     url(r'^login/', views.login),
     url(r'^register/', views.register),
     url(r'^logout/', views.logout),
+    url('captcha/', include('captcha.urls'))
 
 ]
